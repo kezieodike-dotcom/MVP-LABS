@@ -9,7 +9,6 @@ import WhatWeBuildView from './components/WhatWeBuildView';
 import ContactView from './components/ContactView';
 import InsightsView from './components/InsightsView';
 import PlaceholderPage from './components/PlaceholderPage';
-import BottomNav from './components/BottomNav';
 import Footer from './components/Footer';
 
 const placeholderPages: Record<string, { title: string; description: string; icon: string }> = {
@@ -88,11 +87,6 @@ const App: React.FC = () => {
       </main>
 
       <Footer onNavigate={setCurrentPage} />
-
-      {/* Bottom Padding for BottomNav on Mobile */}
-      <div className="h-24 md:hidden" />
-
-      <BottomNav activePage={currentPage} onPageChange={setCurrentPage} />
 
       {/* Scroll indicator for Home */}
       {currentPage === Page.HOME && (

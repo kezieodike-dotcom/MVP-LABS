@@ -7,15 +7,15 @@ interface NavbarProps {
   onNavigate: (page: Page) => void;
 }
 
-const navLinks: { id: Page; label: string }[] = [
-  { id: Page.HOME, label: 'Home' },
-  { id: Page.ABOUT, label: 'About' },
-  { id: Page.WHAT_WE_BUILD, label: 'What We Build' },
-  { id: Page.INSIGHTS, label: 'Insight' },
-  { id: Page.INVESTMENT, label: 'App Investment' },
-  { id: Page.PARTNERS, label: 'Partners' },
-  { id: Page.CAREERS, label: 'Careers' },
-  { id: Page.CONTACT, label: 'Contact' },
+const navLinks: { id: Page; label: string; icon: string }[] = [
+  { id: Page.HOME, label: 'Home', icon: 'home' },
+  { id: Page.ABOUT, label: 'About', icon: 'groups' },
+  { id: Page.WHAT_WE_BUILD, label: 'What We Build', icon: 'construction' },
+  { id: Page.INSIGHTS, label: 'Insight', icon: 'cases' },
+  { id: Page.INVESTMENT, label: 'App Investment', icon: 'rocket_launch' },
+  { id: Page.PARTNERS, label: 'Partners', icon: 'handshake' },
+  { id: Page.CAREERS, label: 'Careers', icon: 'work' },
+  { id: Page.CONTACT, label: 'Contact', icon: 'mail' },
 ];
 
 const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
@@ -72,12 +72,18 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
             <button
               key={link.id}
               onClick={() => handleNav(link.id)}
-              className={`w-full max-w-xs px-6 py-4 rounded-2xl text-lg font-display font-semibold transition-all text-center ${activePage === link.id
+              className={`w-full max-w-sm px-8 py-4 rounded-2xl text-lg font-display font-semibold transition-all flex items-center justify-between group ${activePage === link.id
                 ? 'text-primary bg-primary/10 border border-primary/20'
-                : 'text-slate-300 hover:text-white hover:bg-white/5'
+                : 'text-slate-300 hover:text-white hover:bg-white/5 border border-transparent'
                 } ${link.id === Page.INVESTMENT ? 'text-primary' : ''}`}
             >
-              {link.label}
+              <span className="flex items-center gap-4">
+                <span className={`material-symbols-outlined ${activePage === link.id ? 'text-primary' : 'text-slate-500 group-hover:text-primary transition-colors'}`}>
+                  {link.icon}
+                </span>
+                {link.label}
+              </span>
+              <span className="material-symbols-outlined text-slate-700 group-hover:text-primary text-sm transition-all transform group-hover:translate-x-1">arrow_forward_ios</span>
             </button>
           ))}
           <div className="mt-6 text-xs text-slate-600 font-medium tracking-widest uppercase">
