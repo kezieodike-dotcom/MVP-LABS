@@ -1,7 +1,7 @@
 
 import React from 'react';
 
-const CaseStudiesView: React.FC = () => {
+const InsightsView: React.FC = () => {
     const cases = [
         {
             id: 'aether',
@@ -122,4 +122,4 @@ const CaseStudiesView: React.FC = () => {
     );
 };
 
-export default CaseStudiesView;
+export default InsightsView;

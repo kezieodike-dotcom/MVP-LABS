@@ -10,6 +10,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   const footerLinks: { label: string; page: Page }[] = [
     { label: 'About', page: Page.ABOUT },
     { label: 'What We Build', page: Page.WHAT_WE_BUILD },
+    { label: 'Insight', page: Page.INSIGHTS },
     { label: 'App Investment', page: Page.INVESTMENT },
     { label: 'Careers', page: Page.CAREERS },
     { label: 'Contact', page: Page.CONTACT },

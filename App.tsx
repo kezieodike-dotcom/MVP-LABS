@@ -7,7 +7,7 @@ import InvestmentView from './components/InvestmentView';
 import AboutView from './components/AboutView';
 import WhatWeBuildView from './components/WhatWeBuildView';
 import ContactView from './components/ContactView';
-import CaseStudiesView from './components/CaseStudiesView';
+import InsightsView from './components/InsightsView';
 import PlaceholderPage from './components/PlaceholderPage';
 import BottomNav from './components/BottomNav';
 import Footer from './components/Footer';
@@ -23,15 +23,10 @@ const placeholderPages: Record<string, { title: string; description: string; ico
     description: 'Explore our capabilities — from AI architectures to full-stack platforms and data systems.',
     icon: 'construction',
   },
-  [Page.CASE_STUDIES]: {
-    title: 'Case Studies',
+  [Page.INSIGHTS]: {
+    title: 'Insight',
     description: 'Real projects. Real impact. See how we turn ideas into scalable, production-grade systems.',
     icon: 'cases',
-  },
-  [Page.INSIGHTS]: {
-    title: 'Insights',
-    description: 'Perspectives on systems innovation, AI, and the future of technology from our team.',
-    icon: 'lightbulb',
   },
   [Page.PARTNERS]: {
     title: 'Partners',
@@ -63,8 +58,8 @@ const App: React.FC = () => {
         return <AboutView />;
       case Page.WHAT_WE_BUILD:
         return <WhatWeBuildView />;
-      case Page.CASE_STUDIES:
-        return <CaseStudiesView />;
+      case Page.INSIGHTS:
+        return <InsightsView />;
       case Page.CONTACT:
         return <ContactView />;
       default: {
