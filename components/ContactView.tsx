@@ -32,12 +32,13 @@ const ContactView: React.FC = () => {
                 {/* ===== TEAM SECTION ===== */}
                 <section className="mb-32">
                     <div className="text-center mb-16 anim-fade-up anim-delay-2">
-                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase tracking-wider">Meet the Partners</h2>
+                        <h2 className="text-2xl md:text-3xl font-bold text-white mb-4 uppercase tracking-wider">Executive Leadership</h2>
                         <div className="h-1 bg-primary/30 w-12 mx-auto"></div>
                     </div>
 
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                         {[
+                            { name: 'Paul Nwosu Light', role: 'Executive Director', img: '/images/team-paul.png', bio: 'Full Stack Software Engineer and Executive Director of MVP Labs. Paul leads the studio with a dual focus on technical excellence and strategic growth.' },
                             { name: 'Sarah Chen', role: 'Managing Partner', img: '/images/team-1.png', bio: 'Former infrastructure lead at Stripe, Sarah oversees systems architecture and scale.' },
                             { name: 'Marcus Thorne', role: 'Head of Investment', img: '/images/team-2.png', bio: '20+ years in venture capital and systems engineering. Marcus leads our app investment arm.' },
                             { name: 'Alex Rivera', role: 'Lead AI Architect', img: '/images/team-3.png', bio: 'AI researcher and venture builder focused on LLM performance and impact-driven neural systems.' }

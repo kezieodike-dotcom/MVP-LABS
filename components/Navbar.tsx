@@ -34,8 +34,8 @@ const Navbar: React.FC<NavbarProps> = ({ activePage, onNavigate }) => {
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           {/* Logo */}
           <button onClick={() => handleNav(Page.HOME)} className="flex items-center gap-2 group">
-            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/30 transition-shadow">
-              <span className="material-symbols-outlined text-white text-lg font-bold">bolt</span>
+            <div className="w-10 h-10 overflow-hidden rounded-lg flex items-center justify-center group-hover:shadow-lg group-hover:shadow-primary/30 transition-all group-hover:scale-105">
+              <img src="/images/logo.png" alt="MVP Labs" className="w-full h-full object-cover" />
             </div>
             <span className="font-display font-bold text-lg tracking-tight uppercase">MVP LABS</span>
           </button>

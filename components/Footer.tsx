@@ -20,8 +20,8 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
       <div className="pt-8 border-t border-slate-200 dark:border-white/5 flex flex-col items-center gap-6">
         {/* Logo */}
         <button onClick={() => onNavigate(Page.HOME)} className="flex justify-center items-center gap-2 opacity-80 hover:opacity-100 transition-opacity">
-          <div className="w-6 h-6 bg-primary rounded flex items-center justify-center">
-            <span className="material-symbols-outlined text-white text-xs font-bold">bolt</span>
+          <div className="w-6 h-6 overflow-hidden rounded flex items-center justify-center">
+            <img src="/images/logo.png" alt="MVP Labs" className="w-full h-full object-cover" />
           </div>
           <span className="font-display font-bold text-sm">MVP Labs</span>
         </button>
