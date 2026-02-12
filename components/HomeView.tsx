@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState } from 'react';
 import { Page } from '../types';
 import BrowserMockup from './BrowserMockup';
 
@@ -8,6 +8,13 @@ interface HomeViewProps {
 }
 
 const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+  };
+
   return (
     <div className="relative pt-24 overflow-hidden">
       {/* Background Gradients — animated glow */}
@@ -247,6 +254,131 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
             <p className="text-xl md:text-2xl font-bold text-white leading-tight">
               Every investment is built for <span className="text-primary italic">long-term value.</span>
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== EXECUTIVE LEADERSHIP SECTION ===== */}
+      <section className="px-6 py-32 max-w-6xl mx-auto border-t border-white/5">
+        <div className="text-center mb-20 anim-fade-up">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-6">
+            <span className="material-symbols-outlined text-sm">groups</span>
+            Our Team
+          </div>
+          <h2 className="text-3xl md:text-5xl font-extrabold font-display mb-6 gradient-text uppercase tracking-tight">
+            Executive Leadership
+          </h2>
+          <div className="h-1 bg-primary/30 w-12 mx-auto mb-8"></div>
+          <p className="text-slate-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            Leading the studio with a dual focus on technical excellence and strategic growth.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            { name: 'Paul Nwosu Light', role: 'Executive Director', img: '/images/team-paul.png', bio: 'Full Stack Software Engineer and Executive Director of MVP Labs. Paul leads the studio with technical excellence.' },
+            { name: 'Sarah Chen', role: 'Managing Partner', img: '/images/team-1.png', bio: 'Former infrastructure lead at Stripe, Sarah oversees systems architecture and scale.' },
+            { name: 'Marcus Thorne', role: 'Head of Investment', img: '/images/team-2.png', bio: '20+ years in venture capital and systems engineering. Marcus leads our app investment arm.' },
+            { name: 'Alex Rivera', role: 'Lead AI Architect', img: '/images/team-3.png', bio: 'AI researcher and venture builder focused on LLM performance and neural systems.' }
+          ].map((person, i) => (
+            <div key={i} className="anim-scale-in group" style={{ animationDelay: `${0.3 + i * 0.15}s` }}>
+              <div className="card-blur p-2 rounded-[3.5rem] overflow-hidden mb-6 border border-white/5 group-hover:border-primary/20 transition-all duration-700 shadow-xl shadow-black/20">
+                <img
+                  src={person.img}
+                  alt={person.name}
+                  className="w-full h-80 object-cover rounded-[3rem] grayscale group-hover:grayscale-0 transition-all duration-700 hover:scale-105"
+                />
+              </div>
+              <div className="text-center px-4">
+                <h3 className="text-xl font-bold text-white mb-1">{person.name}</h3>
+                <p className="text-primary text-xs font-black uppercase tracking-widest mb-4">{person.role}</p>
+                <p className="text-slate-500 text-sm leading-relaxed">{person.bio}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* ===== CONTACT FORM & INFO SECTION ===== */}
+      <section className="px-6 py-32 max-w-6xl mx-auto border-t border-white/5 relative">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(168,85,247,0.05)_0%,rgba(2,6,23,0)_70%)] pointer-events-none"></div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-start relative z-10">
+          <div className="anim-fade-up">
+            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-6">
+              <span className="material-symbols-outlined text-sm">connect_without_contact</span>
+              Get In Touch
+            </div>
+            <h2 className="text-4xl md:text-6xl font-extrabold font-display leading-[1.1] mb-8 gradient-text uppercase tracking-tight">
+              Let's build the <span className="text-primary italic">next system.</span>
+            </h2>
+            <p className="text-slate-400 text-lg mb-12 leading-relaxed max-w-xl">
+              Whether you're a founder seeking investment or a partner looking to architect high-impact technology, our executive team is ready to talk.
+            </p>
+
+            <div className="space-y-8">
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <span className="material-symbols-outlined">location_on</span>
+                </div>
+                <div>
+                  <p className="text-white font-bold">Innovation HQ</p>
+                  <p className="text-slate-500 text-sm">300 Mission St, San Francisco, CA</p>
+                </div>
+              </div>
+              <div className="flex gap-4 items-start group">
+                <div className="w-12 h-12 rounded-2xl bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+                  <span className="material-symbols-outlined">mail</span>
+                </div>
+                <div>
+                  <p className="text-white font-bold">Direct Inquiry</p>
+                  <p className="text-slate-500 text-sm">hello@mvplabs.io</p>
+                </div>
+              </div>
+            </div>
+
+            <div className="mt-16 p-8 card-blur rounded-3xl border border-white/5 bg-primary/5 italic text-slate-400 text-sm leading-relaxed">
+              "We prioritize founders and partners who think in systems. If your idea has the potential for borderless scale, we want to hear from you."
+            </div>
+          </div>
+
+          <div className="anim-fade-up anim-delay-2">
+            <div className="card-blur p-10 md:p-12 rounded-[2.5rem] border border-white/10 relative overflow-hidden shadow-2xl">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-full blur-3xl -mr-16 -mt-16"></div>
+
+              {formSubmitted ? (
+                <div className="text-center py-16">
+                  <div className="w-20 h-20 bg-emerald-500/20 text-emerald-400 rounded-full flex items-center justify-center mx-auto mb-8">
+                    <span className="material-symbols-outlined text-5xl">check_circle</span>
+                  </div>
+                  <h3 className="text-3xl font-bold text-white mb-4">Message Sent</h3>
+                  <p className="text-slate-500 text-lg">A lab partner will review your inquiry and respond within 24-48 hours.</p>
+                  <button onClick={() => setFormSubmitted(false)} className="mt-10 text-primary font-bold hover:underline">
+                    Send another message
+                  </button>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-8 relative z-10">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Name</label>
+                      <input required type="text" className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary/50 transition-all" placeholder="Your Name" />
+                    </div>
+                    <div className="space-y-3">
+                      <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Email</label>
+                      <input required type="email" className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary/50 transition-all" placeholder="name@company.com" />
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    <label className="text-[10px] font-black uppercase tracking-widest text-slate-500 ml-1">Message</label>
+                    <textarea required className="w-full bg-slate-900/50 border border-white/10 rounded-2xl px-6 py-5 text-white focus:outline-none focus:border-primary/50 transition-all h-40 resize-none" placeholder="Tell us about the system you want to build..."></textarea>
+                  </div>
+                  <button className="w-full bg-primary hover:bg-blue-600 text-white font-bold py-6 rounded-2xl transition-all shadow-lg shadow-primary/20 hover:shadow-primary/30 active:scale-[0.98] uppercase tracking-widest text-sm">
+                    Dispatch Message
+                  </button>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </section>
