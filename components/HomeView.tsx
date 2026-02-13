@@ -37,8 +37,8 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
         </div>
 
         {/* Headline — stagger 2, shimmer effect */}
-        <h1 className="anim-fade-up anim-delay-2 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] font-extrabold mb-6 tracking-tight anim-shimmer max-w-3xl">
-          BUILDING PLATFORMS FOR GLOBAL IMPACT
+        <h1 className="anim-fade-up anim-delay-2 font-display text-5xl md:text-8xl lg:text-9xl leading-[0.9] font-black mb-8 tracking-tighter anim-shimmer max-w-5xl uppercase">
+          BUILDING PLATFORMS FOR <span className="text-primary italic">GLOBAL RELEVANCE</span>
         </h1>
 
         {/* Decorative line under headline */}
