@@ -16,7 +16,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
   };
 
   return (
-    <div className="relative pt-24 overflow-hidden">
+    <div className="relative pt-24">
       {/* Background Gradients — animated glow */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[150%] h-[500px] glow-arc rounded-[100%] border-t border-primary/20 pointer-events-none"></div>
       <div className="absolute top-[-100px] left-1/2 w-full h-[300px] bg-primary/10 blur-[120px] rounded-full pointer-events-none anim-glow-breathe"></div>
@@ -29,7 +29,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
       <div className="absolute top-[60%] left-[8%] w-2.5 h-2.5 bg-purple-400/10 rounded-full anim-float-delayed pointer-events-none blur-[2px]"></div>
 
       {/* ===== HERO SECTION ===== */}
-      <div className="relative px-6 pt-12 flex flex-col items-center text-center max-w-4xl mx-auto">
+      <div className="relative px-6 pt-12 flex flex-col items-center text-center max-w-6xl mx-auto">
         {/* Badge — stagger 1 */}
         <div className="anim-fade-up anim-delay-1 inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-100 dark:bg-white/5 border border-slate-200 dark:border-white/10 mb-8 backdrop-blur-sm">
           <span className="flex h-2 w-2 rounded-full bg-primary animate-pulse"></span>
@@ -37,7 +37,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
         </div>
 
         {/* Headline — stagger 2, shimmer effect */}
-        <h1 className="anim-fade-up anim-delay-2 font-display text-5xl md:text-8xl lg:text-9xl leading-[0.9] font-black mb-8 tracking-tighter anim-shimmer max-w-5xl uppercase">
+        <h1 className="font-display text-5xl md:text-7xl lg:text-9xl leading-tight font-black mb-10 tracking-tighter uppercase text-white">
           BUILDING PLATFORMS FOR <span className="text-primary italic">GLOBAL RELEVANCE</span>
         </h1>
 
