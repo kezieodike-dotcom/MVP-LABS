@@ -38,7 +38,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onNavigate }) => {
 
         {/* Headline — stagger 2, shimmer effect */}
         <h1 className="anim-fade-up anim-delay-2 font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] font-extrabold mb-6 tracking-tight anim-shimmer max-w-3xl">
-          We Turn Ideas Into Scalable Systems for Global Impact
+          BUILDING PLATFORMS FOR GLOBAL IMPACT
         </h1>
 
         {/* Decorative line under headline */}
